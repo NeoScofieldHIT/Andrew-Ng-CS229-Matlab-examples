@@ -5,11 +5,11 @@ clc;
 % choose a kernel (covariance function)
 kernel = 5;
 switch kernel
-    case 1; k = @(x,y) 1*x'*y;
-    case 2; k = @(x,y) 1*min(x,y);
-    case 3; k = @(x,y) exp(-100*(x-y)'*(x-y));
+    case 1; k = @(x,y) 1*x'*y;					%linear kernel
+    case 2; k = @(x,y) 1*min(x,y);				%Ornstein-Uhlenbeck process kernel used to model partical movement
+    case 3; k = @(x,y) exp(-100*(x-y)'*(x-y));	%Square Exponential kernel
     case 4; k = @(x,y) exp(-1*sqrt((x-y)'*(x-y)));
-    case 5; k = @(x,y) exp(-1*sin(5*pi*(x-y))^2);
+    case 5; k = @(x,y) exp(-1*sin(5*pi*(x-y))^2);%sinusoid kernel
     case 6; k = @(x,y) exp(-100*min(abs(x-y),abs(x+y))^2);
 end
 
