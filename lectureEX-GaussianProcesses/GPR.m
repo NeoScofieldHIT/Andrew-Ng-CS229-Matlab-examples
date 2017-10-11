@@ -25,10 +25,7 @@ xtest = -1.8 : 0.01: 0.2;
 K_ = zeros(length(x), length(xtest));       % K_ is the matrix(K(X, X*))
 for ii = 1:length(x)
     for jj = 1:length(xtest)
-        K_(ii,jj) = sigmaf^2*exp(-(x(ii) - xtest(jj))^2/(2*l*l));
-%         if x(ii) == xtest(jj)
-%             K_(ii,jj) = K_(ii,jj) + sigman^2;
-%         end
+        K_(ii,jj) = sigmaf^2*exp(-(x(ii) - xtest(jj))^2/(2*l*l));% kernel
     end
 end
 y_ = K_'*(inv(K))*(y');
