@@ -3,6 +3,7 @@ close all;
 clc;
 
 % this is a demo for Gaussian Process Regression
+% for more information please refer to 'Gaussian proecess regression a quick introduction.pdf'
 % written by NeoChow @HIT 2017/10/10
 % the x range from -1.8 to 0.2
 x = [-1.5, -1.0, -0.75, -0.4, -0.25, 0.00]; % training set
@@ -23,5 +24,5 @@ for ii = 1:length(x)
         K_(ii,jj) = sigmaf^2*exp(-(x(ii) - xtest(jj))^2/(2*l*l));
         if x(ii) == x(jj)
             K_(ii,jj) = K_(ii,jj) + sigman^2;
+        end
     end
-end
