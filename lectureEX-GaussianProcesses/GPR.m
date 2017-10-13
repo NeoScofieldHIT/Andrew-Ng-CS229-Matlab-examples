@@ -18,7 +18,7 @@ K = [1.70 1.42 1.21 0.87 0.72 0.51;         % covariance matrix of training set
     0.72 1.21 1.42 1.59 1.70 1.56;
     0.51 0.97 1.21 1.48 1.56 1.70];
 sigman = 0.3;   % the covariance of the noise
-sigmaf = 1.27;  % hyperparameter of SE kernel the constant factor
+sigmaf = 1.27;  % hyperparameter of SE kernel the constant factor 1.27
 l = 1;          % hyperparameter of SE kernel the length factor
 % compute the K*, the new x*'s are vector from -1.8 to 0.2
 xtest = -1.8 : 0.01: 0.2;
